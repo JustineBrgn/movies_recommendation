@@ -1,6 +1,9 @@
 
 # Recommendation of movies using differents approaches
 
+![image](https://user-images.githubusercontent.com/72447589/115842322-fd8fd200-a41d-11eb-8926-fd83620a332e.png)
+
+
 The dataset I used: https://www.kaggle.com/rounakbanik/the-movies-dataset
 
 Articles that really helped me:
