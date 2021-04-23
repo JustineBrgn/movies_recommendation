@@ -1,3 +1,4 @@
+
 # Recommendation of movies using differents approaches
 
 The dataset I used: https://www.kaggle.com/rounakbanik/the-movies-dataset
@@ -10,3 +11,4 @@ https://towardsdatascience.com/introduction-to-recommender-systems-6c66cf15ada
 
 ### I used content-based and collaborative-based approaches
 
+[RecSys.pptx](https://github.com/JustineBrgn/movies_recommendation/files/6363766/RecSys.pptx)
