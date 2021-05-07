@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Movie recommender webapp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{url_for('static', path='/css/mystyle.css')}}">
+</head>
+
+<body>
+
+    <!-- Page Content -->
+    <div class="wrapper">
+        <div class="center">
+            <form action="/home" method="get">
+                <input class="btn btn-lg btn-huge btn-info" type="submit" value="Open Movie Recommender"></input>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

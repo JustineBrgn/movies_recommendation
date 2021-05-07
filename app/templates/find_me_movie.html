@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% set active_page = "find-me-movie" %}
+
+{% block title %}Fastapi Webapp{% endblock %}
+
+{% block head %}
+{{ super() }}
+
+
+{% endblock %}
+
+{% block page_content %}
+<br>
+<div class="container">
+
+    <h4>Movies you've rated - Collaborative Recommendation</h4>
+    <h6>Find the 10 most liked movies by people with similar tastes</h6>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Movie title</th>
+                <th>Your rating</th>
+            <tr>
+        </thead>
+        <tbody>
+            {% for rating in user_ratings %}
+            <tr>
+                <td>{{ rating[0] }}</td>
+                <td>{{ rating[1] }}</td>
+                <td>{{ rating[2] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <hr>
+    <div class="form-group">
+        <h4>Add movie rating</h4>
+        <form method="POST" action="ratings/forms/add">
+            <div class="row">
+                <div class="col"><input class="form-control" type="text" name="title" placeholder="movie title"></div>
+                <div class="col"><input class="form-control" type="number" name="rating" placeholder="1-5" min="1"
+                        max="5"></div>
+                <div class="col-2"><input type="submit" value="Add" class="btn btn-success" style="width: 100%;"></div>
+            </div>
+        </form>
+    </div>
+    <div class="form-group">
+        <h4>Remove movie rating</h4>
+        <form method="POST" action="ratings/forms/delete">
+            <div class="row">
+                <div class="col"><input class="form-control" type="number" name="id" placeholder="999"></div>
+                <div class="col"></div>
+                <div class="col-2"><input type="submit" value="Delete" class="btn btn-danger" style="width: 100%;">
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="form-group">
+        <form method="POST" action="forms/collaborativerecomm">
+            <div class="row">
+                <div class="col"><input type="submit" value="Generate recommendations" class="btn btn-info" style="width: 100%;">
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="container">
+        <ul class="list-group list-group-flush">
+            {% for movie in recommended_movies %}
+                <li class="list-group-item"><h6>{{movie}}</h6></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+
+    <br/>
+    <hr/>
+    <br/>
+</div>
+
+
+
+
+
+<div class="container">
+    <div class="form-group">
+        <h4>Movie recommendation - Content-based recommendation</h4>
+        <h6>Find the most similar movies</h6>
+        <form method="POST" action="forms/contentrecomm2">
+            <div class="row">
+                <div class="col"><input class="form-control" type="text" name="title" placeholder="movie title"></div>
+                </div>
+                <br>
+                <div class="col"><input type="submit" value="Generate recommendations" class="btn btn-info" style="width: 100%;">
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <ul class="list-group list-group-flush">
+        {% for movie in similar_movies %}
+        <li class="list-group-item"><h6>{{movie}}</h6></li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+ 
+{% endblock %}
