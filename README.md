@@ -1,10 +1,10 @@
 
-### Movie website 
+## Movie website 
 
 ![recommender](https://user-images.githubusercontent.com/72447589/117451660-1383b380-af43-11eb-9e96-252c950b189b.gif)
 
 
-# Recommendation of movies using differents approaches
+## Recommendation of movies using differents approaches
 
 ![image](https://user-images.githubusercontent.com/72447589/115842322-fd8fd200-a41d-11eb-8926-fd83620a332e.png)
 
